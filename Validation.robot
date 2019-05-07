@@ -59,6 +59,7 @@ ${Page 5 URL}       https://www.carmudi.co.id/cars/condition:all/price:-10000000
 Homepage verification
 
     Open Browser    ${URL}  chrome
+    #Maximize Browser Window
     Location Should Be    ${URL}
 
 Click < 100 Juta Button
@@ -79,8 +80,8 @@ Verify if all Listings are less than 100
     \    Log    ${INDEX}
     \    ${InitialValue}    Get Text    xpath=(${xpath})[${INDEX}]
     \    Log    ${InitialValue}
-    ${Listing Value Page1} =    Split String     ${InitialValue}    Juta
-    Should Be True    ${Listing Value Page1}[0] < 100
+    \   ${Listing Value Page1} =    Split String     ${InitialValue}    Juta
+    \   Should Be True    ${Listing Value Page1}[0] < 100
 
 Clicking Next Button
     Click Element       ${Next Button}
@@ -103,8 +104,8 @@ Verify if all Listings are less than 100 for page 2
     \    Log    ${INDEX}
     \    ${InitialValue}    Get Text    xpath=(${xpath})[${INDEX}]
     \    Log    ${InitialValue}
-    ${Listing Value Page2} =    Split String     ${InitialValue}    Juta
-    Should Be True    ${Listing Value Page2}[0] < 100
+    \   ${Listing Value Page2} =    Split String     ${InitialValue}    Juta
+    \   Should Be True    ${Listing Value Page2}[0] < 100
 
 # End of Page 2
 
@@ -124,8 +125,8 @@ Verify if all Listings are less than 100 for page 3
     \    Log    ${INDEX}
     \    ${InitialValue}    Get Text    xpath=(${xpath})[${INDEX}]
     \    Log    ${InitialValue}
-    ${Listing Value Page3} =    Split String     ${InitialValue}    Juta
-    Should Be True    ${Listing Value Page3}[0] < 100
+    \   ${Listing Value Page3} =    Split String     ${InitialValue}    Juta
+    \   Should Be True    ${Listing Value Page3}[0] < 100
 
 # End of Page 3
 
@@ -145,9 +146,10 @@ Verify if all Listings are less than 100 for page 4
     \    Log    ${INDEX}
     \    ${InitialValue}    Get Text    xpath=(${xpath})[${INDEX}]
     \    Log    ${InitialValue}
-    ${Listing Value Page4} =    Split String     ${InitialValue}    Juta
-    Should Be True    ${Listing Value Page4}[0] < 100
+    \   ${Listing Value Page4} =    Split String     ${InitialValue}    Juta
+    \   Should Be True    ${Listing Value Page4}[0] < 100
     Click Element       //a[@class="ad-popup__close-button button outlined"]
+
 
 Page 5 URL Verification
     Sleep   10s
@@ -165,6 +167,6 @@ Verify if all Listings are less than 100 for page 5
     \    Log    ${INDEX}
     \    ${InitialValue}    Get Text    xpath=(${xpath})[${INDEX}]
     \    Log    ${InitialValue}
-    ${Listing Value Page5} =    Split String     ${InitialValue}    Juta
-    Should Be True    ${Listing Value Page5}[0] < 100
+    \   ${Listing Value Page5} =    Split String     ${InitialValue}    Juta
+    \   Should Be True    ${Listing Value Page5}[0] <= 100
 
